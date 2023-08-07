@@ -1,16 +1,32 @@
 #!/usr/bin/env node
 
-const { writeFile } = require("fs")
-const {mkdirp} = require("mkdirp")
+const { exec } = require("child_process")
+const {writeFileSync} = require("fs")
+const { mkdirp } = require("mkdirp")
 
-const userRoute = "const express = require(\"express\") \nconst router = express.Router() \n\n\nmodule.exports = router"
+const createDirectories =async () => {
+    await mkdirp("./routes")
+    await mkdirp("./public")
+    await mkdirp("./middlewares")
+    await mkdirp("./configs")
+    await mkdirp("./models")
+}
 
-mkdirp("./routes").then(() => {
-    writeFile("./routes/userRoute.js", userRoute, (err) => {
+const createMainFile = () => {
+    writeFileSync("./main.js","",(err) => {
         if(err){
             console.log(err)
-        }else{
-            console.log("files created successfully")
         }
-    })
-})
+    })        
+}
+
+try{
+    exec("npm init -y", (err) => console.log(err))
+    createDirectories()
+    createMainFile()
+    console.log(`
+        npm install
+    `)
+}catch(err){
+    console.log(err)
+}
