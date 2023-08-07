@@ -1,6 +1,6 @@
 {
   "name": "make-express",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "simple express app generator",
   "main": "index.js",
   "bin": {
@@ -16,8 +16,8 @@
     "email": "shadinmhd97@gmail.com"
   },
   "repository": {
-   "type": "git",
-   "url": "github.com/shadinmhd/make-express" 
+    "type": "git",
+    "url": "github.com/shadinmhd/make-express"
   },
   "license": "MIT",
   "dependencies": {
