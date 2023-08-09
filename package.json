@@ -1,6 +1,6 @@
 {
   "name": "make-express",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "simple express app generator",
   "main": "index.js",
   "bin": {
